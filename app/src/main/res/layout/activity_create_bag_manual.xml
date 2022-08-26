@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateBagManual">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="355dp"
+        android:layout_height="532dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/num_array_1" />
+
+                <TextView
+                    android:id="@+id/tokentext1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="5"
+                    android:text="@string/manual_star"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinner2"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/num_array_1" />
+
+                <TextView
+                    android:id="@+id/tokentext2"
+                    android:layout_width="30dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="5"
+                    android:text="@string/manual_tentacle"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinner3"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/num_array_3" />
+
+                <TextView
+                    android:id="@+id/tokentext3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="5"
+                    android:text="@string/manual_skull"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinner4"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/num_array_3" />
+
+                <TextView
+                    android:id="@+id/tokentext4"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="5"
+                    android:text="@string/manual_hood"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinner5"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/num_array_3" />
+
+                <TextView
+                    android:id="@+id/tokentext5"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="5"
+                    android:text="@string/manual_broken"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinner6"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/num_array_3" />
+
+                <TextView
+                    android:id="@+id/tokentext6"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="5"
+                    android:text="@string/manual_tentacle_fist"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinner7"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/num_array_3" />
+
+                <TextView
+                    android:id="@+id/tokentext7"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="5"
+                    android:text="@string/value_plus_one"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinner8"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/num_array_1" />
+
+                <TextView
+                    android:id="@+id/tokentext8"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="5"
+                    android:text="@string/value_zero"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinner9"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/num_array_1" />
+
+                <TextView
+                    android:id="@+id/tokentext9"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="5"
+                    android:text="@string/value_minus_one"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinner10"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/num_array_3" />
+
+                <TextView
+                    android:id="@+id/tokentext10"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="5"
+                    android:text="@string/value_minus_two"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinner11"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/num_array_3" />
+
+                <TextView
+                    android:id="@+id/tokentext11"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="5"
+                    android:text="@string/value_minus_three"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinner12"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/num_array_3" />
+
+                <TextView
+                    android:id="@+id/tokentext12"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="5"
+                    android:text="@string/value_minus_four"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinner13"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/num_array_3" />
+
+                <TextView
+                    android:id="@+id/tokentext13"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="5"
+                    android:text="@string/value_minus_five"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinner14"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/num_array_3" />
+
+                <TextView
+                    android:id="@+id/tokentext14"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="5"
+                    android:text="@string/value_minus_six"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinner15"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/num_array_3" />
+
+                <TextView
+                    android:id="@+id/tokentext15"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="5"
+                    android:text="@string/value_minus_seven"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinner16"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/num_array_3" />
+
+                <TextView
+                    android:id="@+id/tokentext16"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="5"
+                    android:text="@string/value_minus_eight"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="183dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/manual_token_select"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:onClick="createBag"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:srcCompat="@android:drawable/ic_media_play" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

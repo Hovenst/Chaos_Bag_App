@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">Chaos Bag Probability Calculator</string>
+    <string name="app_title">Title of the App!</string>
+    <string name="button_manual">Manually Create Bag</string>
+    <string name="button_scenario">Create Scenario Bag</string>
+    <string name="title_activity_bag_create_manual">BagCreateManual</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="title_activity_create_bag_manual">CreateBagManual</string>
+    <string name="manual_token_select">Select Tokens:</string>
+    <string name="manual_star">Star</string>
+    <string name="manual_tentacle">Tentacle</string>
+    <string name="manual_skull">Skull</string>
+    <string name="manual_hood">Hood</string>
+    <string name="manual_tentacle_fist">Tentacle Fist</string>
+    <string name="manual_broken">Broken Token</string>
+    <string name="value_plus_one">+1</string>
+    <string name="value_zero">0</string>
+    <string name="value_minus_one">-1</string>
+    <string name="value_minus_two">-2</string>
+    <string name="value_minus_three">-3</string>
+    <string name="value_minus_four">-4</string>
+    <string name="value_minus_five">-5</string>
+    <string name="value_minus_six">-6</string>
+    <string name="value_minus_seven">-7</string>
+    <string name="value_minus_eight">-8</string>
+    <string name="manual_minus_desc">Minus symbol</string>
+    <string name="manual_plus_desc">Plus symbol</string>
+    <string name="calc_bag_contents">Empty Bag</string>
+    <string name="probability_default_bag">Default Bag Text</string>
+    <string name="prob_table_p1">+1</string>
+    <string name="prob_table_0">0</string>
+    <string name="prob_table_1">-1</string>
+    <string name="prob_table_2">-2</string>
+    <string name="prob_table_undefined">und</string>
+    <string name="prob_table_no_effect">--</string>
+    <string name="value_plus_two">+2</string>
+    <string name="value_plus_three">+3</string>
+    <string name="value_plus_four">+4</string>
+    <string name="value_plus_five">+5</string>
+    <string name="value_plus_six">+6</string>
+    <string name="value_plus_seven">+7</string>
+    <string name="value_plus_eight">+8</string>
+    <string name="prob_table_header1">Up/Down by</string>
+    <string name="prob_table_header2">Chance to succeed</string>
+    <string name="prob_table_header3">Secondary effects</string>
+    <string name="manual_sk_val">0</string>
+    <string name="manual_sk_effect">none</string>
+    <string name="manual_sk_input">Skull token</string>
+    <string name="manual_sk_var">Variable value</string>
+    <string name="value_plus_nine">+9</string>
+    <string name="value_plus_ten">+10</string>
+    <string name="value_minus_nine">-9</string>
+    <string name="value_minus_ten">-10</string>
+    <string name="value_plus_eleven">+11</string>
+    <string name="value_plus_twelve">+12</string>
+    <string name="value_plus_thirteen">+13</string>
+    <string name="value_plus_fourteen">+14</string>
+    <string name="value_plus_fifteen">+15</string>
+    <string name="value_plus_sixteen">+16</string>
+    <string name="value_plus_seventeen">+17</string>
+    <string name="value_plus_eighteen">+18</string>
+    <string name="value_plus_nineteen">+19</string>
+    <string name="value_plus_twenty">+20</string>
+
+    <string-array name="num_array_3">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="num_array_1">
+        <item>1</item>
+    </string-array>
+</resources>
