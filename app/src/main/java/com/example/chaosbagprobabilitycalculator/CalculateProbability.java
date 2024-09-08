@@ -39,6 +39,8 @@ public class CalculateProbability extends AppCompatActivity {
              17: curse
             Value at each index corresponds quantity of token in bag
          */
+
+        // Represents contents of chaos bag
         int[] bag = new int[18];
 
 
@@ -59,20 +61,24 @@ public class CalculateProbability extends AppCompatActivity {
         /* BASIC: Display contents of bag on startup
             Translate bag (int list) to a string
             - use a dynamic package to hold tokens
-            - iterate through bag
+            - iterate through bag,
         */
+        // Display contents of bag on startup
+
+        // Convert bag's int[] into a string for display and update TextView bagDisplay
         String bagString = bagToString(bag);
         TextView textView = findViewById(R.id.bagDisplay);
         textView.setText(bagString);
+
         /*
             Display table of probability values for the given chaos bag
-            - Basic: fixed table with values from >= 20 to <= -10
+            - Dynamic table only showing relevant value breakpoints
+            - Shows chance to succeed for each value above test's difficulty
+
             - Goals:
                 - Only display value entries that have a positive probability (i.e. don't show 0%)
-                - Display probability of secondary effects (from symbols)
-                - Display probability of conditional modifiers (skull tokens, etc.)
-                - Display probability in terms of chance to succeed, rather than for each value
-                    - Maybe have a setting? Display chance of value, chance to fail, chance to succeed?
+                - Display values at which symbol on-fail effects will apply
+                - Include probability of conditional modifiers (-1 per doom in play, etc.)
          */
         int[] bagCopy = copyOf(bag, bag.length);
         // Probability array: 31 elements
@@ -157,12 +163,9 @@ public class CalculateProbability extends AppCompatActivity {
         // Populate something with objects?
     }
 
-    // TODO: Create function to update bag
+    // TODO (3): Create function to update bag
 
-    /* TODO: Function to calculate probabilities of chaos bag values
-        1- Format of output? (Lists? Arrays? List depth?)
-        2- Include probabilities of secondary functions
-
+    /*
         How do we want to accumulate probabilities for nonterminals? It seems like a recursive
             function would simplify certain parts of the process, but we need to be sure we know
             how data is passed and saved between functions in java. Pointers? Nested functions
@@ -181,8 +184,11 @@ public class CalculateProbability extends AppCompatActivity {
      */
     public float[] calcProb(int[] bag, float[] probs, int tokenmod, float probmod)
     {
-        // Maybe: Stop computing once probability to reach this depth of bag is less than 1%
-        //if (probmod < 0.01) return probs;
+        /* TODO: Look into recursion efficiency
+            - Do we want to limit recursion depth?
+            - How to determine what is significant information
+
+         */
         /* List to hold probabilities of each modifier value
             0: <= -20
             1..19: -19..-1
@@ -208,8 +214,7 @@ public class CalculateProbability extends AppCompatActivity {
                     // Check to see if symbol token says "draw another"
                     if ( ((i>1&&i<6) && nonterminals[i-2]) || i>15)
                     {
-                        // TODO: Test the recursive call, haven't done that yet
-                        // "Remove" token from bag copy for recursive call
+                        // If drawing another token, "remove" this token from bag for recursive call
                         fill(bag, i, i, (bag[i]-1));
                         /*
                         Recursive call, do a full calculation of the remaining bag, with all tokens
@@ -233,10 +238,7 @@ public class CalculateProbability extends AppCompatActivity {
         return probs;
     }
 
-    /* TODO:
-        - Modify values displayed to percentages
-        - Change organization to be "up by" rather than by value modifier
-     */
+    // Deprecated function for more cluttered display solution
     public void displayProbsStatic(float[] ps)
     {
         /* Translate value modifier of draw into the "up by" amount required to pass
@@ -303,6 +305,7 @@ public class CalculateProbability extends AppCompatActivity {
         float acc = 0;
         int first = -1;
         boolean[] nonzero = new boolean[31];
+
         for (int i = 30; i > -1; i--)
         {
             // Get placeholder for last element (0%) to be added to table
@@ -333,7 +336,7 @@ public class CalculateProbability extends AppCompatActivity {
                 // Format: +/- up/down by value, %chance to pass, %symbol fail effects
                 // Value: +/-
 
-                // TODO: create string for token fail effects
+                // TODO: Represent token fail effects
                 val = String.format("%-+4d", 20-i);
                 pass = String.format("%% %-4.0f", ps[i]*100);
                 effect = "";

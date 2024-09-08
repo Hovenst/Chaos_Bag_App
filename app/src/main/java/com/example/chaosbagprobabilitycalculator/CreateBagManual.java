@@ -29,6 +29,13 @@ public class CreateBagManual extends AppCompatActivity {
         - Secondary effects
      */
 
+    /* CreateBagManual lets the user create a custom token bag
+        - Spinners provide an interface to select token quantities
+        - On hitting the create button, the spinners' contents are read saved to an arraylist
+        - The arraylist is transferred to CalculateProbability activity
+
+     */
+
     public static final String EXTRA_LIST = "com.example.createbagmanual.LIST";
     public Spinner[] spins = new Spinner[16];
     //public AdapterView[] avs = new AdapterView[16];
