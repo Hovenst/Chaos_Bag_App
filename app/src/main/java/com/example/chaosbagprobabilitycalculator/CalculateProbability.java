@@ -22,7 +22,7 @@ public class CalculateProbability extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-
+        //System.out.println("Create");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculate_probability);
 
@@ -37,9 +37,10 @@ public class CalculateProbability extends AppCompatActivity {
              6-15: +1..-8
              16: bless
              17: curse
+             18: frost
             Value at each index corresponds quantity of token in bag
          */
-        int[] bag = new int[18];
+        int[] bag = new int[19];
 
 
         // Receive intent and get chaos bag count
@@ -49,10 +50,12 @@ public class CalculateProbability extends AppCompatActivity {
         int[] list = intent.getIntArrayExtra((EXTRA_LIST_M));
 
         // Translate received list into chaos bag object
-        for (int i = 0; i < 18; i++)
+        assert(list!=null);
+        //System.out.println("Copy");
+        for (int i = 0; i < 19; i++)
         {
-            // Read values from received list or put 0 for bless/curse tokens
-            bag[i] = i < 16 ? list[i] : 0;
+            // Read values from received list or put 0 for frost tokens
+            bag[i] = i < 18 ? list[i] : 0;
         }
 
 
@@ -78,9 +81,9 @@ public class CalculateProbability extends AppCompatActivity {
         // Probability array: 31 elements
         // [0]..[19]: -20..-1, [20]:0, [21]..[30]:+1..+10
         float[] probs = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+        //System.out.println("Calculate");
         probs = calcProb(bagCopy, probs, 0, 1);
         // displayProbsStatic(probs);
-
         // Programmatically populate table with probability data
         displayProbsDynamic(probs);
     }
@@ -89,12 +92,12 @@ public class CalculateProbability extends AppCompatActivity {
     public String bagToString(int[] bag)
     {
         String next, contents = "";
-        for (int i=0; i<18; i++)
+        for (int i=0; i<19; i++)
         {
             for (int j=bag[i]; j>0; j--)
             {
                 next = iToT(i);
-                if (i!=17 || j!=1) next = next.concat(", ");
+                if (i!=18 || j!=1) next = next.concat(", ");
                 contents = contents.concat(next);
             }
         }
@@ -124,6 +127,7 @@ public class CalculateProbability extends AppCompatActivity {
             case 15: token = "-8"; break;
             case 16: token = "Bl"; break;
             case 17: token = "Cr"; break;
+            case 18: token = "Fr"; break;
             // Error case
             default: token = "XX"; break;
         }
@@ -137,6 +141,8 @@ public class CalculateProbability extends AppCompatActivity {
         else if (i>1&&i<6) return symbolVals[i-2]; // Obtain value of symbol
         else if (i>5&&i<16) return 7-i;
         else if (i==16) return 2;
+        else if (i==17) return -2;
+        else if (i==18) return -1;
         else return -2; // No default case, assumption is valid input
     }
 
@@ -210,15 +216,19 @@ public class CalculateProbability extends AppCompatActivity {
                     {
                         // TODO: Test the recursive call, haven't done that yet
                         // "Remove" token from bag copy for recursive call
-                        fill(bag, i, i, (bag[i]-1));
+                        //System.out.println("Bag");
+                        //System.out.println(bagToString(bag));
+                        fill(bag, i, i+1, (bag[i]-1));
+                        //System.out.println("Fill");
+                        //System.out.println(bagToString(bag));
                         /*
                         Recursive call, do a full calculation of the remaining bag, with all tokens
                          changed in value by the modifier of this nonterminal, and with probability
                          weight divided by the chance of drawing this token
                         */
-                        probs = calcProb(bag, probs, iToMod(i), probmod/count);
+                        probs = calcProb(bag, probs, tokenmod+iToMod(i), probmod/count);
                         // "Return" token to bag for further counting on this recursive level
-                        fill(bag, i, i, (bag[i]+1));
+                        fill(bag, i, i+1, (bag[i]+1));
                     } else { // Token is a terminal, add probability normally
                         modIndex = modToi(iToMod(i) + tokenmod); // Determine index of probability entry to update
                         /*
