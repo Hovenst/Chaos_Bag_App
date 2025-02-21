@@ -1,0 +1,66 @@
+CreateBagScenario encoding
+
+What information is needed?
+How best to organize that information?
+What needs to be delivered to the next activity?
+
+Info needed:
+Campaign
+- 10 regular
+- 10 Standalones (actually more for 2-part scenarios)
+- 10 Parallel
+Scenario
+- 8-10 per campaign
+Difficulty
+- 4 + Standalone for each scenario
+Context
+- See below
+
+Translate this encoding into a bag
+- List of every single possible bag?
+- Probably lots more efficient to build the bag like you do in-game
+Campaign > difficulty > scenario + modifiers
+
+Other info
+- Context information for campaign to make bag with
+- Maybe settled on 4 here? Unsure what all would be needed
+
+
+Dunwich contexts (4)
++1 TF if you "cheated"
++1 BR if students die
++1 BR if ally dies at museum
++1 TF if you take Necronomicon
+
+Carcosa contexts (4) 
+Tokens from last scenario: 2 HD, 2 BR, 2 TF, or 1 of each (only some options are available for some scenarios)
+2: 2 HD (flames), 2 BR (ooze), 2 TF (flood), or none
+3: 1 of each (defeated, no res / doom), 2 TF (go back), 2 BR (escape), 2 HD (burn)
+4: 2 HD (take clasp), 2 BR (leave clasp), 2 BR (oathspeaker), 1 of each (found the path forward)
+5: 2 HD (the king claimed his victims), 2 BR (took the keys by force), 2 TF (escaped)
+6: 2 TF (gaze / survived), 2 HD (home), 2 BR (Nigel), 
+7: 2 TF (defeat), 2 HD (beat up stranger), 2 BR (follow stranger)
+8: 2 HD & BR, 2 HD & TF
+
+TCU contexts (4)
++2 BR/TF - accept/reject fate
++1 HD - member of lodge (3)
+	+1 HD - told lodge of coven (3)
+		-2 HD - joined inner circle, betrayed on the isle (6)
++1 SK - black book (4)
++1 -# - asked Annete/Sanford for assistance (8)
+
+Dream eaters contexts (3)
++0-3 SK per level of steps reached (2-A)
++1 TF if black cat is helping A
++1 BR if black cat is helping B
++# if the dreamers grow weaker (4-A)
++# if Randolph survived the descent (4-B, mid-scenario)
+
+Edge of the Earth contexts (4)
+Frost tokens
++1 HD (convince) / +1 BR (disbelieve)
+
++1 TF - City v.1/v.2 (3) 
+-2 TF - TF Keys on City v.3 (4)
++0 - photographed astronomical charts (4)

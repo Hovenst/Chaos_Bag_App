@@ -37,7 +37,7 @@ public class CreateBagManual extends AppCompatActivity {
      */
 
     public static final String EXTRA_LIST = "com.example.createbagmanual.LIST";
-    public Spinner[] spins = new Spinner[16];
+    public Spinner[] spins = new Spinner[19];
     //public AdapterView[] avs = new AdapterView[16];
     //public int[] spinList = {0,1,2,3};
 
@@ -48,42 +48,52 @@ public class CreateBagManual extends AppCompatActivity {
         setContentView(R.layout.activity_create_bag_manual);
 
         // Populate a spinner list
-        for (int i = 0; i < 16; i++)
+        for (int i = 0; i < 19; i++)
         {
             spins[i] = (Spinner) ((ViewGroup) ((ViewGroup) ((ViewGroup) findViewById(R.id.scrollView2)).getChildAt(0)).getChildAt(i)).getChildAt(0);
         }
 
-        // Connect each spinner to the same adapter
+        // Create spinner templates for different tokens
         ArrayAdapter<CharSequence> adapter3 =
                 ArrayAdapter.createFromResource(this, R.array.num_array_3, android.R.layout.simple_spinner_item);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        ArrayAdapter<CharSequence> adapter1 =
-                ArrayAdapter.createFromResource(this, R.array.num_array_1, android.R.layout.simple_spinner_item);
-        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        for (int i = 0; i < 16; i++)
+
+        ArrayAdapter<CharSequence> adapter8 =
+                ArrayAdapter.createFromResource(this, R.array.num_array_8, android.R.layout.simple_spinner_item);
+        adapter8.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        ArrayAdapter<CharSequence> adapter10 =
+                ArrayAdapter.createFromResource(this, R.array.num_array_10, android.R.layout.simple_spinner_item);
+        adapter10.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // Assign spinner templates to tokens
+        for (int i = 0; i < 19; i++)
         {
-            if (i < 2 || i == 7 || i == 8) {
-                spins[i].setAdapter(adapter1);
+            if (i > 15) {
+                if (i == 18) {
+                    spins[i].setAdapter(adapter8); // Frost: max 8
+                } else {
+                    spins[i].setAdapter(adapter10); // Bless/Curse: max 10
+                }
             } else {
                 spins[i].setAdapter(adapter3);
             }
 
         }
 
-        // Initialize each spinner to proper start value
-
 
     }
 
     public void createBag(View view)
     {
+        //System.out.println("Bag");
         // Convert contents of text boxes into an arraylist
         String t;
-        int[] nums = new int[16];
+        int[] nums = new int[19];
         //ArrayList<Integer> nums = new ArrayList<>(16);
 
         // Read the current textview in each spinner to obtain value
-        for (int i = 0; i < 16; i++) {
+        for (int i = 0; i < 19; i++) {
             t = ((TextView) spins[i].getChildAt(0)).getText().toString();
             nums[i] = Integer.parseInt(t);
         }
